@@ -7,6 +7,7 @@ private inherited sharing class AtFutureRecipes_Tests {
          * when you call asynchronous code within Test.startTest() and Test.stopTest() the test
          * runner forces the asynchronous code to run synchronously.
          */
+        System.debug(true);
         Test.startTest();
         AtFutureRecipes.atFutureMethodWithoutCalloutPrivileges('Hello World');
         Test.stopTest();
