@@ -45,6 +45,10 @@ public with sharing class DMLRecipes {
         }
     }
 
+    public static void methodNotInSalto(){
+        
+    }
+
     /**
      * @description Demonstrates how to use the Database.insert() method to
      * persist a net-new record to the database.
