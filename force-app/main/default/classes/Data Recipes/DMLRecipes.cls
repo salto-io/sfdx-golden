@@ -41,6 +41,7 @@ public with sharing class DMLRecipes {
         try {
             insert as user acct;
         } catch (DmlException DMLe) {
+            AccountLogic accl = new AccountLogic();
             throw new CustomDMLException('Failed');
         }
     }
