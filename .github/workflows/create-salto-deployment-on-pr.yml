@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: "14"
 
-     - name: Install Salto CLI
+      - name: Install Salto CLI
         run: |
           curl https://cli.salto.io/release/1/linux-x64.tar.gz --output linux-x64.tar.gz
           tar xvzf linux-x64.tar.gz
