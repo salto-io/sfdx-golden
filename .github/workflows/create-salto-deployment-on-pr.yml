@@ -1,0 +1,48 @@
+# Unique name for this workflow
+name: Validate PR on development branch
+
+# Definition when the workflow should run
+on:
+  # The workflow will run whenever an event happens on a pull request
+  pull_request:
+    # The events are that a PR is opened, or when a commit is pushed
+    # to a branch that has an existing pull request
+    types: [opened]
+    # The branches filter allows to specify that this workflow should only
+    # run if the branch name is "develop". This way we prevent this workflow
+    # from running when PRs are opened on other branches
+
+    # We only care about changes to the force-app directory, which is the
+    # root directory of the sfdx project. This prevents the job from running
+    # when changing non-salesforce files (like this yml file).
+    paths:
+      - "force-app/**"
+
+# Jobs to be executed when the above conditions are met
+jobs:
+  # This is the name of the job. You can give it whatever name you want
+  create-salto-deployment:
+    # As mentioned in the blog post, this job runs inside a VM. Here we
+    # can specify which OS this VM should run on.
+    # In this case, we are going to run our commands on the latest version
+    # of ubuntu
+    runs-on: ubuntu-latest
+    if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      # Now we install nodejs in the VM, and specify version 14
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+     - name: Install Salto CLI
+        run: |
+          curl https://cli.salto.io/release/1/linux-x64.tar.gz --output linux-x64.tar.gz
+          tar xvzf linux-x64.tar.gz
+        
+      - name: Run Deploy Validation
+        run: |
+          ./salto-cloud deployment create from-pull-request -E ${{ secrets.SALTO_INTEGRATION_ENV}} -u ${{ github.event.pull_request.html_url }}
+        env: 
+          SALTO_API_TOKEN: ${{ secrets.SALTO_API_TOKEN }}
+
+      
