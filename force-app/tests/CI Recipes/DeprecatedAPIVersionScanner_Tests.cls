@@ -15,7 +15,7 @@ private class DeprecatedAPIVersionScanner_Tests {
             WHERE EventType = 'ApiTotalUsage'
         ];
         if (logFiles.size() >= 1) {
-            // Check the log files for deprecated API versions
+            // Check the log files for deprecated API versions.
             for (EventLogFile logFile : logFiles) {
                 apiVersionsInUse.addAll(
                     buildSetOfReferencedAPIVersions(
