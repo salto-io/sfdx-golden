@@ -41,6 +41,8 @@ public with sharing class CollectionUtils {
         Map<Id, SObject> returnValues = (Map<Id, SObject>) dynamicMapType.newInstance();
         for (SObject current : incomingList) {
             if (current.get(key) != null) {
+                System.debug(true);
+                System.debug('Im here!');
                 returnValues.put((Id) current.get(key), current);
             }
         }
