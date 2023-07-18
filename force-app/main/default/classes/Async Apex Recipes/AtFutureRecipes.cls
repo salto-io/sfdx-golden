@@ -39,7 +39,7 @@ public with sharing class AtFutureRecipes {
      *
      * The RestClient class can be found in the 'Shared Code' group
      *
-     * @param url       The URL to make a callout to.
+    
      * @example
      * AtFutureRecipes.atFutureMethodWithCalloutPrivileges('google.com');
      **/
