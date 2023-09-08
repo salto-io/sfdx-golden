@@ -19,7 +19,7 @@ private inherited sharing class AtFutureRecipes_Tests {
 
     /**
      * @description A test that executes a positive test on the AtFuture Callout method.
-     * Uses a HttpCalloutMock instance
+     * Uses a HttpCalloutMock instance.
      */
     @SuppressWarnings('PMD.ApexUnitTestClassShouldHaveAsserts')
     @isTest
