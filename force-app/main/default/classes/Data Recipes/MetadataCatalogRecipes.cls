@@ -10,7 +10,7 @@ public with sharing class MetadataCatalogRecipes {
      */
     public class LookupRelationshipDefinition {
         /**
-         * @description Specifies what object this one looks up to
+         * @description Specifies what object this one looks up to. << added this dot
          */
         public String looksUpTo { get; set; }
         /**
