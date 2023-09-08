@@ -46,7 +46,7 @@ public with sharing class DMLRecipes {
     }
 
     public static void methodNotInSalto(){
-        
+        System.debug('This method is not in salto');
     }
 
     /**
