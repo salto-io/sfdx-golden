@@ -1,7 +1,7 @@
 /**
  * @description Demonstrates how to query the Metadata Catalog. This is
  * sometimes faster that Schema Describe calls especially for large complex orgs
- * @group Data Recipes
+ * @group Data Recipes new comment
  */
 public with sharing class MetadataCatalogRecipes {
     /**
