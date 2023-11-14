@@ -1,7 +1,7 @@
 /**
  * @description Demonstrates how to query the Metadata Catalog. This is
  * sometimes faster that Schema Describe calls especially for large complex orgs
- * @group Data Recipes
+ * @group Data Recipes new comment
  */
 public with sharing class MetadataCatalogRecipes {
     /**
@@ -60,7 +60,7 @@ public with sharing class MetadataCatalogRecipes {
      * @example
      * Map<String, Map<String, String>> results =
      *      MetadataCatalogRecipes.findAllFormulaFields();
-     * System.debug(results);
+     * System.debug(results); and another comment here
      **/
     @SuppressWarnings('PMD.ApexCRUDViolation')
     public static Map<String, Map<String, String>> findAllFormulaFields() {
