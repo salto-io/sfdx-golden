@@ -60,7 +60,7 @@ public with sharing class MetadataCatalogRecipes {
      * @example
      * Map<String, Map<String, String>> results =
      *      MetadataCatalogRecipes.findAllFormulaFields();
-     * System.debug(results);
+     * System.debug(results); and another comment here
      **/
     @SuppressWarnings('PMD.ApexCRUDViolation')
     public static Map<String, Map<String, String>> findAllFormulaFields() {
